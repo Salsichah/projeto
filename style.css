@@ -108,11 +108,16 @@ body * {
   transform: translateY(
     -50%
   ); /* Eixo Y move o elemento para cima ou para baixo. Eixo X move o elemento para a esquerda ou para a direita */
+
+  animation: slide-back 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards; /* forwards faz com que quando terminar a animação slide-in, ele mantenha todas as propriedades definidas dentro do 'to' */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -207,5 +212,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animations */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
