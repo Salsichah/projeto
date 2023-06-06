@@ -42,7 +42,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*
   border: 1px solid red;
   usa-se essa border somenter até o momento de organizar os elementos, para termos uma noção de espaço, depois podemos deletá-la
