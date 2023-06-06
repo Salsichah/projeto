@@ -34,6 +34,8 @@ body {
 
   /* background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  /* o comando abaixo faz com que a altura do body fique em 100% independente do tamanho do dispositivo */
+  height: 100vh; /* 100% do viewport height */
 }
 
 body * {
@@ -193,4 +195,17 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* media queries */
+/* media queries só funcionam quando há a seguinte linha no arquivo html:
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
